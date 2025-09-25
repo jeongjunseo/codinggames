@@ -3,23 +3,22 @@
 #include <string.h>
 #include <stdbool.h>
 
-
 int main()
 {
-	//temperatures °³¼ö n
+	//temperatures ê°œìˆ˜ n
     int n;
 
     scanf("%d", &n);
     int* tem = (int*)malloc(sizeof(int) * (n + 2));
 
-	//temperatures ÀÔ·Â¹Ş±â
+	//temperatures ì…ë ¥ë°›ê¸°
     for (int i = 0; i < n; i++) {
         int t;
         scanf("%d", &t);
         tem[i] = t;
     }
  
-    //°ªÀÌ 0ÀÏ °æ¿ì 0
+    //ê°’ì´ 0ì¼ ê²½ìš° 0
     if (n == 0)
     {
         printf("0");
@@ -27,17 +26,17 @@ int main()
     }
 
 
-	//°¡Àå 0¿¡ °¡±î¿î ¿Âµµ Ã£±â
+	//ê°€ì¥ 0ì— ê°€ê¹Œìš´ ì˜¨ë„ ì°¾ê¸°
     int li = 0;
     for (;n > 0;n--)
     {
         for (int i = 0;i < n;i++)
         {
-			if (tem[li] * tem[li] > tem[i] * tem[i])  //Àı´ñ°ª ºñ±³
+			if (tem[li] * tem[li] > tem[i] * tem[i])  //ì ˆëŒ“ê°’ ë¹„êµ
             {
                 li = i;
             }
-			if (tem[li] * tem[li] == tem[i] * tem[i])   //Àı´ñ°ªÀÌ °°À» ¶§ ¾ç¼ö ¿ì¼±
+			if (tem[li] * tem[li] == tem[i] * tem[i])   //ì ˆëŒ“ê°’ì´ ê°™ì„ ë•Œ ì–‘ìˆ˜ ìš°ì„ 
             {
                 if (tem[li] < tem[i])
                     li = i;
@@ -51,4 +50,6 @@ int main()
     return 0;
 }
 
-//n°ªÀÌ 0ÀÎ °æ¿ì Á¶°Ç ¹İ¿µ¾ÈÇÔ.
+
+//nê°’ì´ 0ì¸ ê²½ìš° ì¡°ê±´ ë°˜ì˜ì•ˆí•¨
+//https://www.codingame.com/ide/puzzle/temperatures
